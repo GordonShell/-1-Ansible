@@ -67,9 +67,6 @@ Enable-PSRemoting -Force
 ```
 # Создание пользователя для Ansible
 ```
-УДАЛЯЕМ СТАРОГО ПОЛЬЗОВАТЕЛЯ (Если вы уже пробовали создать ранее и хотите пересоздать)
-Remove-LocalUser -Name "AnsibleUser" -ErrorAction SilentlyContinue
-
 СОЗДАЕМ НОВОГО ПОЛЬЗОВАТЕЛЯ
 Write-Host "`nСоздаем пользователя AnsibleUser..." -ForegroundColor Cyan
 $Password = ConvertTo-SecureString "n0TiniTed0" -AsPlainText -Force
