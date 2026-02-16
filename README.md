@@ -33,7 +33,14 @@ wsl --install
  
 ## 🔧 Установка ansible
 ```
-sudo apt install ansible –y
+# Обновление пакетов
+sudo apt update
+
+# Установка Ansible
+sudo apt install ansible -y
+
+# Проверка установки
+ansible --version
 ```
 ## 🚀 Настройка WinRM
 
