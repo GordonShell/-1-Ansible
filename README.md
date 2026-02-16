@@ -57,6 +57,29 @@ pip3 install pywinrm
 ```
 sudo apt install python3-winrm -y
 ```
+## Настройка WinRM
+
+На целевой Windows машине (PowerShell от администратора):
+```
+# Включение WinRM
+Enable-PSRemoting -Force
+
+# Создание пользователя для Ansible
+$username = "ansible_user"
+$password = ConvertTo-SecureString "YourStrongPassword123!" -AsPlainText -Force
+New-LocalUser -Name $username -Password $password -FullName "Ansible User"
+Add-LocalGroupMember -Group "Administrators" -Member $username
+
+# Просмотр текущих слушателей WinRM
+winrm enumerate winrm/config/Listener
+
+# Настройка WinRM для Ansible (при необходимости)
+winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="2048"}'
+winrm set winrm/config '@{MaxTimeoutms="1800000"}'
+winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+winrm set winrm/config/service/auth '@{Basic="true"}'
+```
+
 Полезные ссылки!
 ```
 https://docs.ansible.com/projects/ansible/latest/os_guide/windows_winrm.html
@@ -64,6 +87,7 @@ https://docs.ansible.com/projects/ansible/latest/os_guide/windows_winrm.html
 ```
 https://gist.github.com/nikhilsingnurkar/9776116d44446a3f5da64d71cfafe57f#file-configureremotingforansible-ps1
 ```
+
 
 Ping
 ```
