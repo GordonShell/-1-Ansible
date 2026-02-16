@@ -44,8 +44,15 @@ ansible --version
 ```
 ## 🚀 Настройка WinRM
 
-Полезные ссылки
+```
+# Установка pip и pywinrm
+sudo apt install python3-pip -y
+pip3 install pywinrm
 
+# Или через системные пакеты
+sudo apt install python3-winrm -y
+```
+Полезные ссылки!
 ```
 https://docs.ansible.com/projects/ansible/latest/os_guide/windows_winrm.html
 ```
