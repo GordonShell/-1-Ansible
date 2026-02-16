@@ -60,6 +60,7 @@ sudo apt install python3-winrm -y
 ## Настройка WinRM
 
 На целевой Windows машине (PowerShell от администратора):
+
 ```
 # Включение WinRM
 Enable-PSRemoting -Force
