@@ -23,4 +23,5 @@ Ansible playbooks для автоматизации установки и обн
 - Проверка успешности установки через WMI и реестр
 - Очистка временных файлов после установки
 
-```sudo apt install ansible –y 
+```
+sudo apt install ansible –y 
